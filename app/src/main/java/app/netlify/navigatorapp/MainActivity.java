@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button buttonExit = findViewById(R.id.buttonExit);
+        buttonExit.setOnClickListener(v -> exitApp());
         sourceEditText = findViewById(R.id.editTextSource);
         destinationEditText = findViewById(R.id.editTextDestination);
         navigateButton = findViewById(R.id.buttonNavigate);
@@ -51,5 +53,8 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Google Maps app is not installed", Toast.LENGTH_SHORT).show();
         }
+    }
+    private void exitApp() {
+        finishAffinity();
     }
 }
