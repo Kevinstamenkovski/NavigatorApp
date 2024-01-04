@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -31,7 +32,24 @@ public class MainActivity extends AppCompatActivity {
         navigateButton = findViewById(R.id.buttonNavigate);
 
         navigateButton.setOnClickListener(v -> navigate());
+
+
+        findViewById(R.id.buttonStartSecondActivity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to start SecondActivity
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+
+                // Optionally, pass data to SecondActivity using Intent extras
+                intent.putExtra("MESSAGE", "Hello, Second Activity!");
+                intent.putExtra("NUMBER", 42);
+
+                // Start the SecondActivity
+                startActivity(intent);
+            }
+        });
     }
+
 
     private void navigate() {
         String source = sourceEditText.getText().toString();

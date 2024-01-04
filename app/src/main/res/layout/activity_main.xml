@@ -50,5 +50,10 @@
         android:background="#dc3545"
         android:layout_below="@id/buttonNavigate"
         android:layout_centerHorizontal="true"/>
-
+    <Button
+        android:id="@+id/buttonStartSecondActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Second Activity"
+        android:layout_centerInParent="true"/>
 </RelativeLayout>
